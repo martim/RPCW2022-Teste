@@ -1,0 +1,39 @@
+Exercício nº1
+
+1 - "Data cleansing": antes de avançares verifica se o ficheiro JSON disponibilizado está correto e se o seu formato é o ideal para o que se pede. És livre de fazer as alterações que entenderes.
+Resposta:
+Separei o ficheiro JSON inicial em dois, 
+no qual um consiste na informação sobre as cidades
+e o outro consiste na informação sobre as ligações das diferentes cidades.
+
+2 - Cria uma BD em MongoDB, com o nome "MAPA2022" para onde importarás o conteúdo do ficheiro JSON disponibilizado (como o fazes e que coleções crias fica ao teu critério);
+Resposta:
+Para o ficheiro das Cidades: mongoimport -d MAPA2022 -c cidades --type json --jsonArray --file cidades.json
+Para o ficheiro das Ligações: mongoimport -d MAPA2022 -c ligacoes --type json --jsonArray --file ligacoes.json
+
+Exercício nº2
+
+"Aquecimento" 
+
+Quantos processos (nível 3) e quais são (obtem uma lista em JSON; podes concatenar sublistas invocando várias queries), pertencentes à descendência da classe 750?
+Resposta:
+Query - http://clav-api.di.uminho.pt/v2/classes/c750/descendencia?nivel=3&token=
+3 Processos
+- 750.10 Gestão do aluno/formando
+- 750.20 Gestão formativa e curricular
+- 750.30 Avaliação de aprendizagens
+
+Quantas entidades estão catalogadas?
+Resposta:
+Query - http://clav-api.di.uminho.pt/v2/entidades?token=
+647 Entidades
+
+Quantos processos (classes de nível 3) se encontram na descendência de 750.20?
+Resposta:
+Query - http://clav-api.di.uminho.pt/v2/classes/c750.20/descendencia?nivel=3&token=
+7 processos
+
+Quantos processos (classes de nível 3) estão relacionados com 750.20.600?
+Resposta:
+Query - http://clav-api.di.uminho.pt/v2/classes/c750.20.600/procRel/?nivel=3&token=
+24 processos relacionados
